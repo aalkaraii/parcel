@@ -1,8 +1,15 @@
+const user = require("../models/user");
 const registerNewUser = (req, res) => {
-  res.send("home");
+  try {
+    console.log(req.body);
+    User.create(req.body);
+    res.send("ok created");
+  } catch (err) {
+    res.send("sth went wrong");
+  }
 };
 const loginUser = (req, res) => {
-  res.send("ok");
+  res.post("ok");
 };
 
 module.exports = { registerNewUser, loginUser };

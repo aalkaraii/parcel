@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import CustomNavbar from "./Compoment/NavBar/page";
+import { Input } from "@nextui-org/react";
 
 const HomePage = () => {
   return (
@@ -17,11 +18,11 @@ const HomePage = () => {
             </div>
           </div>
           <div className="flex flex-col space-y-4">
-            <input
+            <Input
               className="focus:outline-none border-b border-gray-400 w-full mt-3 text-xs rounded-sm p-5"
               placeholder="Enter location"
             />
-            <input
+            <Input
               className="focus:outline-none border-b border-gray-400 w-full mt-3 text-xs rounded-sm p-5"
               placeholder="Enter destination"
             />

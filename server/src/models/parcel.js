@@ -1,17 +1,18 @@
 const mongoose = require("mongoose");
-
 const { Schema } = mongoose;
 
 const parcelSchema = new Schema({
   parcelItem: String,
-  ParcelWeight: String,
-  Parcelpickup: String,
-  ParcelDestination: String,
-  ParcelCharge: String,
-  ParcelStatus: {
+  parcelWeight: Number,
+  parcelPickUp: String,
+  parcelDestination: String,
+  parcelCharge: Number,
+  parcelStatus: {
     type: String,
-    enum: ["Pending", "Approved", "Delivered"],
+    enum: ["Pending", "Approved", "Delivered", "delayed", "cancelled"],
+    default: "Pending",
   },
 });
+
 const Parcel = mongoose.model("Parcel", parcelSchema);
 module.exports = Parcel;

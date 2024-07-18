@@ -3,11 +3,11 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import CustomNavbar from "../Compoment/NavBar/page";
-import { Button, Card } from "@nextui-org/react";
+import { Button, Card, Select, SelectItem } from "@nextui-org/react";
 import axios from "axios";
-import { useFormik } from "formik";
+import { Form, Formik, useFormik } from "formik";
 
-const Register = () => {
+const SignupForm = () => {
   const formik = useFormik({
     initialValues: {
       fistName: "",
@@ -15,6 +15,7 @@ const Register = () => {
       email: "",
       password: "",
       phoneNumber: "",
+      role: "",
     },
     onSubmit: (values) => {
       registerUser(values);
@@ -22,128 +23,174 @@ const Register = () => {
   });
 
   const registerUser = async (values) => {
-    const { data } = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/register`,
-      values
-    );
-    if (data) alert("registered successfully");
+    try {
+      console.log("API URL:", process.env.NEXT_PUBLIC_API_URL); // Log API URL for debugging
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/register`,
+        values
+      );
+      if (data) alert("Registered successfully");
+    } catch (error) {
+      if (error.response) {
+        // Server responded with a status other than 2xx
+        console.log("Error response:", error.response.data);
+      } else if (error.request) {
+        // Request was made but no response was received
+        console.log("Error request:", error.request);
+      } else {
+        // Something happened in setting up the request
+        console.log("Error message:", error.message);
+      }
+      alert("Registration failed. Please try again later.");
+    }
   };
 
   return (
-    <Card>
-      <div>
-        <CustomNavbar />
-      </div>
-      <div className=" bg-gray-400 h-screen flex justify-center items-center">
-        <form
-          className="bg-white p-6  w-1/3 rounded shadow-lg"
-          onSubmit={formik.handleSubmit}
-        >
-          <div>
-            <div className="flex space-x-4 mb-4 ">
-              <label className="w-1/2">
-                First name
-                <input
-                  type="text"
-                  placeholder="Enter First name"
-                  className=" focus:outline-none border-b border-gray-400 w-full mt-3 text-xs "
-                ></input>
-              </label>
-              <label className="w-1/2">
-                Last name
-                <input
-                  type="text"
-                  placeholder="Enter Last Name"
-                  className="border-b border-gray-400 w-full mt-3 text-xs focus:outline-none "
-                ></input>
-              </label>
-            </div>
-
-            <div className="flex space-x-4 mb-4 ">
-              <label className="w-1/2">
-                Enter Email Address
-                <input
-                  placeholder="Enter email address"
-                  className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
-                  id="email"
-                  name="email"
-                  type="text"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
-                ></input>
-              </label>
-              <label className="w-1/2">
-                Enter PhoneNumber
-                <input
-                  type="number"
-                  placeholder="Enter phone number "
-                  className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
-                ></input>
-              </label>
-            </div>
-            <div className="flex space-x-4 mb-4 ">
-              <label className="w-1/2">
-                Choose A Password
-                <input
-                  placeholder="Enter Password"
-                  type="password"
-                  className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
-                  id="password"
-                  name="password"
-                  onChange={formik.handleChange}
-                  value={formik.values.password}
-                ></input>
-              </label>
-              <label className="w-1/2">
-                Confirm Password
-                <input
-                  placeholder="confirm Password"
-                  type="password"
-                  className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
-                ></input>
-              </label>
-            </div>
-          </div>
-          <Button
-            className="bg-blue-300 mt-3 rounded-md shadow-lg  w-full p-2"
-            type="submit"
+    <Formik>
+      <Card>
+        <div>
+          <CustomNavbar />
+        </div>
+        <div className=" bg-gray-400 h-screen flex justify-center items-center">
+          <Form
+            className="bg-white p-6  w-1/3 rounded shadow-lg"
+            onSubmit={formik.handleSubmit}
           >
-            Create Account
-          </Button>
+            <div>
+              <div className="flex space-x-4 mb-4 ">
+                <label className="w-1/2">
+                  First name
+                  <input
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    placeholder="Enter First name"
+                    className=" focus:outline-none border-b border-gray-400 w-full mt-3 text-xs "
+                    onChange={formik.handleChange}
+                    value={formik.values.firstName}
+                  ></input>
+                </label>
+                <label className="w-1/2">
+                  Last name
+                  <input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    placeholder="Enter Last Name"
+                    className="border-b border-gray-400 w-full mt-3 text-xs focus:outline-none "
+                    onChange={formik.handleChange}
+                    value={formik.values.lastName}
+                  ></input>
+                </label>
+              </div>
 
-          <div className="flex items-center space-x-4 mb-4 ">
-            <hr className="flex-grow border-t border-gray-300" />
-            <span className="px-2 text-gray-500">or</span>
-            <hr className="flex-grow border-t border-gray-300" />
-          </div>
+              <div className="flex space-x-4 mb-4 ">
+                <label className="w-1/2">
+                  Enter Email Address
+                  <input
+                    placeholder="Enter email address"
+                    className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
+                    id="email"
+                    name="email"
+                    type="text"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                  ></input>
+                </label>
+                <label className="w-1/2">
+                  Enter PhoneNumber
+                  <input
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    type="text"
+                    placeholder="Enter phone number "
+                    className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
+                    onChange={formik.handleChange}
+                    value={formik.values.phoneNumber}
+                  ></input>
+                </label>
+              </div>
+              <div className="flex space-x-4 mb-4 ">
+                <label className="w-1/2">
+                  Choose A Password
+                  <input
+                    placeholder="Enter Password"
+                    type="password"
+                    className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
+                    id="password"
+                    name="password"
+                    onChange={formik.handleChange}
+                    value={formik.values.password}
+                  ></input>
+                </label>
+                <label className="w-1/2">
+                  Confirm Password
+                  <input
+                    placeholder="confirm Password"
+                    type="password"
+                    className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
+                  ></input>
+                </label>
+                <Select
+                  name="role"
+                  onChange={(e) => formik.setFieldValue("role", e.target.value)}
+                >
+                  <SelectItem key="Male">Male</SelectItem>
+                  <SelectItem key="Female">Female</SelectItem>
+                  <SelectItem key="Others">Others</SelectItem>
+                </Select>
+                <label htmlFor="role">Role</label>
+                <Select
+                  name="role"
+                  onChange={(e) => formik.setFieldValue("role", e.target.value)}
+                >
+                  <SelectItem key="Recruiter">Recruiter</SelectItem>
+                  <SelectItem key="Freelancer">Freelancer</SelectItem>
+                </Select>
+                y
+              </div>
+            </div>
+            <Button
+              className="bg-blue-300 mt-3 rounded-md shadow-lg  w-full p-2"
+              type="submit"
+            >
+              Create Account
+            </Button>
 
-          <div className="mt-2">
-            <button className="bg-gray-300 mt -3 rounded-md shadow-lg flex justify-center items-center gap-2  w-full p-2">
-              {" "}
-              <FcGoogle size={25} />
-              Continue with Google{" "}
-            </button>
-            <button className="bg-gray-300 mt-3 rounded-md shadow-lg flex justify-center gap-2 w-full p-2">
-              {" "}
-              <BsFacebook size={25} />
-              Continue with Facebook{" "}
-            </button>
-          </div>
-          <div className="flex items-center mb-4">
-            <hr className="flex-grow border-t border-gray-300" />
-            <span className="px-2 text-gray-500">or</span>
-            <hr className="flex-grow border-t border-gray-300" />
-          </div>
-          <div className="flex justify-center text-center">
-            Already have an account?{" "}
-            <a href="/Login" className="underline text-blue-300 ">
-              Sign in
-            </a>
-          </div>
-        </form>
-      </div>
-    </Card>
+            <div className="flex items-center space-x-4 mb-4 ">
+              <hr className="flex-grow border-t border-gray-300" />
+              <span className="px-2 text-gray-500">or</span>
+              <hr className="flex-grow border-t border-gray-300" />
+            </div>
+
+            <div className="mt-2">
+              <button className="bg-gray-300 mt -3 rounded-md shadow-lg flex justify-center items-center gap-2  w-full p-2">
+                {" "}
+                <FcGoogle size={25} />
+                Continue with Google{" "}
+              </button>
+              <button className="bg-gray-300 mt-3 rounded-md shadow-lg flex justify-center gap-2 w-full p-2">
+                {" "}
+                <BsFacebook size={25} />
+                Continue with Facebook{" "}
+              </button>
+            </div>
+            <div className="flex items-center mb-4">
+              <hr className="flex-grow border-t border-gray-300" />
+              <span className="px-2 text-gray-500">or</span>
+              <hr className="flex-grow border-t border-gray-300" />
+            </div>
+            <div className="flex justify-center text-center">
+              Already have an account?{" "}
+              <a href="/Login" className="underline text-blue-300 ">
+                Sign in
+              </a>
+            </div>
+          </Form>
+        </div>
+      </Card>
+    </Formik>
   );
 };
 
-export default Register;
+export default SignupForm;
