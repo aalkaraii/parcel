@@ -15,6 +15,7 @@ const SignupForm = () => {
       email: "",
       password: "",
       phoneNumber: "",
+      gender: "",
       role: "",
     },
     onSubmit: (values) => {
@@ -23,26 +24,11 @@ const SignupForm = () => {
   });
 
   const registerUser = async (values) => {
-    try {
-      console.log("API URL:", process.env.NEXT_PUBLIC_API_URL); // Log API URL for debugging
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/register`,
-        values
-      );
-      if (data) alert("Registered successfully");
-    } catch (error) {
-      if (error.response) {
-        // Server responded with a status other than 2xx
-        console.log("Error response:", error.response.data);
-      } else if (error.request) {
-        // Request was made but no response was received
-        console.log("Error request:", error.request);
-      } else {
-        // Something happened in setting up the request
-        console.log("Error message:", error.message);
-      }
-      alert("Registration failed. Please try again later.");
-    }
+    const { data } = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/register`,
+      values
+    );
+    if (data) alert("registered successfully");
   };
 
   return (
@@ -131,23 +117,28 @@ const SignupForm = () => {
                     className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
                   ></input>
                 </label>
+                <label htmlFor="email">Gender</label>
+
                 <Select
-                  name="role"
-                  onChange={(e) => formik.setFieldValue("role", e.target.value)}
+                  name="gender"
+                  onChange={(e) =>
+                    formik.setFieldValue("gender", e.target.value)
+                  }
                 >
-                  <SelectItem key="Male">Male</SelectItem>
-                  <SelectItem key="Female">Female</SelectItem>
-                  <SelectItem key="Others">Others</SelectItem>
+                  <SelectItem key="male">Male</SelectItem>
+                  <SelectItem key="female">Female</SelectItem>
+                  <SelectItem key="others">Others</SelectItem>
                 </Select>
+
                 <label htmlFor="role">Role</label>
+
                 <Select
                   name="role"
                   onChange={(e) => formik.setFieldValue("role", e.target.value)}
                 >
-                  <SelectItem key="Recruiter">Recruiter</SelectItem>
-                  <SelectItem key="Freelancer">Freelancer</SelectItem>
+                  <SelectItem key="user">user</SelectItem>
+                  <SelectItem key="Rider">Rider</SelectItem>
                 </Select>
-                y
               </div>
             </div>
             <Button

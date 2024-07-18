@@ -7,17 +7,17 @@ const userSchema = new Schema({
   phoneNumber: String,
   gender: {
     type: String,
-    enum: ["Male", "Female", "Others"],
-    default: "Male",
+    enum: ["male", "female", "others"],
+    default: "male",
   },
   role: {
     type: String,
     enum: ["user", "Rider"],
-    default: "Male",
+    default: "Rider",
   },
   email: String,
   password: String,
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("user", userSchema);
 module.exports = User;

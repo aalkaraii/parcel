@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const connect = async () => {
   const connected = await mongoose.connect(
-    "mongodb://127.0.0.1:27017/parceldb"
+    "mongodb://127.0.0.1:27017/parcel1db"
   );
   if (connected) {
     console.log("connected to mongodb");
