@@ -10,10 +10,10 @@ import React from "react";
 
 const LeftSideBar = () => {
   return (
-    <div className="flex ">
+    <div className="flex mt-8">
       <div class="flex  w-7">
-        <aside class="w-0.5 text-white p-4">
-          <main class="flex-grow  mt-10 bg-gray-100 text-black">
+        <aside class="w-0.5 text-black p-4">
+          <main class="flex-grow  mt-10 bg-black text-black">
             <div className="sidebar pl-1  w-[18.5rem]">
               <div className="rider-types flex justify-evenly gap-10">
                 <div className="flex flex-col">

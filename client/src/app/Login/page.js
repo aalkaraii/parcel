@@ -13,7 +13,6 @@ const login = () => {
       <Card>
         <div>
           <CustomNavbar />
-          <SideBar />
         </div>
 
         <div className=" bg-gray-400 h-screen flex justify-center items-center">

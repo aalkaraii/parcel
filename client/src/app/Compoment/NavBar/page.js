@@ -36,10 +36,14 @@ const CustomNavbar = () => {
   return (
     <NextUINavbar>
       <NavbarBrand>
-        <div className="font-bold text-inherit text-4xl flex">
+        <Button
+          className="font-bold text-inherit text-4xl bg-blue-300flex"
+          as={Link}
+          href="/"
+        >
           <p className="text-black">Delivery</p>
           <p className="text-green-500 text-4xl">X</p>
-        </div>
+        </Button>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <Dropdown>

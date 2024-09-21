@@ -96,7 +96,7 @@ const SignupForm = () => {
                   ></input>
                 </label>
               </div>
-              <div className="flex space-x-4 mb-4 ">
+              <div className=" space-x-4 mb-4 ">
                 <label className="w-1/2">
                   Choose A Password
                   <input
@@ -117,7 +117,7 @@ const SignupForm = () => {
                     className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
                   ></input>
                 </label>
-                <label htmlFor="email">Gender</label>
+                <label htmlFor="gender">Gender</label>
 
                 <Select
                   name="gender"

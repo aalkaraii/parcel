@@ -7,7 +7,7 @@ import Link from "next/link";
 import React from "react";
 const RightSideBar = () => {
   return (
-    <div className="flex flex-col gap-1 pl-2">
+    <div className="flex flex-col gap-1 pl-2 bg-black">
       <div className="flex gap-8 ">
         <div className="flex gap-2">
           <FaLocationDot size={20} />
@@ -72,25 +72,25 @@ const RightSideBar = () => {
           <p className="font-bold "> Payment Method </p>
           <div className="flex">
             <img
-              src="/pic1.png"
+              src="/esewa.png"
               width={60}
               height={20}
               className="rounded m-1"
             ></img>
             <img
-              src="/mastercard.svg"
+              src="/fonepay.png"
               width={60}
               height={10}
               className="rounded m-1"
             ></img>
             <img
-              src="/paypal.svg"
+              src="/Khalti.png"
               width={60}
               height={30}
               className="rounded m-1"
             ></img>
             <img
-              src="/p4.png"
+              src="/imepay.png"
               width={60}
               height={30}
               className="rounded m-1"
