@@ -5,7 +5,7 @@ import { BsFacebook } from "react-icons/bs";
 import { Formik } from "formik";
 import { Card } from "@nextui-org/react";
 import CustomNavbar from "../Compoment/NavBar/page";
-import SideBar from "../Compoment/SideBar/page";
+import SideBar from "../Compoment/SideBar/LeftSideBar/page";
 
 const login = () => {
   return (

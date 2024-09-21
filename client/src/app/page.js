@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import CustomNavbar from "./Compoment/NavBar/page";
 import { Input } from "@nextui-org/react";
-import SideBar from "./Compoment/SideBar/page";
-import { FaHome } from "react-icons/fa";
+import LeftSideBar from "./Compoment/SideBar/LeftSideBar/page";
+import RightSideBar from "./Compoment/SideBar/RightSideBar/page";
 
 const HomePage = () => {
   return (
@@ -12,8 +12,8 @@ const HomePage = () => {
         <CustomNavbar />
       </div>
       <div class="flex min-h-screen">
-        <main class="flex-grow p-2 w-0.4 bg-gray-100">
-          <SideBar />
+        <main class="flex-grow p-2 w-1/2 bg-gray-100">
+          <LeftSideBar />
         </main>
 
         <div className="flex h-full items-center justify-between w-screen p-14">
@@ -49,6 +49,9 @@ const HomePage = () => {
             />
           </div>
         </div>
+        <aside class="w-1/4 bg-gray-300 p-4">
+          <RightSideBar />
+        </aside>
       </div>
     </div>
   );
