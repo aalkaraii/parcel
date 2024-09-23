@@ -126,7 +126,7 @@ const CustomNavbar = () => {
           </DropdownMenu>
         </Dropdown>
         <NavbarItem isActive>
-          <Link className="text-black" href="#" aria-current="page">
+          <Link className="text-black" href="#about" aria-current="page">
             About Us
           </Link>
         </NavbarItem>

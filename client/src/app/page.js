@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import { Input } from "@nextui-org/react";
 import CustomNavbar from "@/component/NavBar/page";
+import AboutUs from "@/component/AboutUs/page";
+
 const HomePage = () => {
   return (
     <div className="relative h-screen w-full  bg-blue-100">
@@ -64,6 +66,7 @@ const HomePage = () => {
           />
         </div>
       </div>
+      <AboutUs />
     </div>
   );
 };
