@@ -10,12 +10,12 @@ import React from "react";
 
 const LeftSideBar = () => {
   return (
-    <div className="flex mt-8">
+    <div className="flex ">
       <div class="flex  w-7">
-        <aside class="w-0.5 text-black p-4">
-          <main class="flex-grow  mt-10 bg-black text-black">
-            <div className="sidebar pl-1  w-[18.5rem]">
-              <div className="rider-types flex justify-evenly gap-10">
+        <aside class="w-0.5 text-white p-2">
+          <main class="flex-grow  bg-gray-100 text-black">
+            <div className="sidebar   w-[16.5rem]">
+              <div className="rider-types flex justify-evenly gap-4">
                 <div className="flex flex-col">
                   <p className="font-bold">Bike </p>
                   <p className="text-slate-600">5 Nearby</p>
@@ -66,7 +66,7 @@ const LeftSideBar = () => {
                   <p>Audience</p>
                 </div>
               </div>
-              <div className="flex flex-col pt-10 pl-5 items-center gap-5">
+              <div className="flex flex-col pt-5 pl-5 items-center gap-5">
                 <FaStar size={60} className="" color="gold" />
                 <p className="text-2xl">Go Premium Now!</p>
                 <p className=" ">

@@ -1,8 +1,7 @@
+import CustomNavbar from "@/component/NavBar/page";
+import LeftSideBar from "@/component/SideBar/LeftSidebar/page";
+import RightSideBar from "@/component/SideBar/RightSidebar/page";
 import React from "react";
-import LeftSideBar from "../Compoment/SideBar/LeftSideBar/page";
-import RightSideBar from "../Compoment/SideBar/RightSideBar/page";
-import CustomNavbar from "../Compoment/NavBar/page";
-import { Input } from "postcss";
 
 const Dashboard = () => {
   return (

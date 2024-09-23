@@ -5,11 +5,11 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Button,
   DropdownItem,
   DropdownTrigger,
   Dropdown,
   DropdownMenu,
+  Button,
 } from "@nextui-org/react";
 import {
   FaChevronDown,
@@ -20,6 +20,12 @@ import {
   FaUserTag,
   FaBalanceScale,
 } from "react-icons/fa"; // Importing icons from react-icons
+import { FaMapLocationDot } from "react-icons/fa6";
+import { RiCalendarScheduleLine } from "react-icons/ri";
+import { MdMultipleStop } from "react-icons/md";
+import { BsCashCoin } from "react-icons/bs";
+import { RiCustomerServiceFill } from "react-icons/ri";
+
 import Link from "next/link";
 
 const CustomNavbar = () => {
@@ -27,17 +33,19 @@ const CustomNavbar = () => {
     chevron: <FaChevronDown size={16} />,
     scale: <FaBalanceScale className="text-warning" size={30} />,
     lock: <FaLock className="text-success" size={30} />,
-    activity: <FaChartLine className="text-secondary" size={30} />,
+    activity: <FaMapLocationDot className="text-secondary" size={30} />,
     flash: <FaBolt className="text-primary" size={30} />,
-    server: <FaServer className="text-success" size={30} />,
-    user: <FaUserTag className="text-danger" size={30} />,
+    schedule: <RiCalendarScheduleLine className="text-primary" size={30} />,
+    multi: <MdMultipleStop className="text-primary" size={30} />,
+    payment: <BsCashCoin className="text-success" size={30} />,
+    customer: <RiCustomerServiceFill className="text-danger" size={30} />,
   };
 
   return (
-    <NextUINavbar>
+    <NextUINavbar className="  bg-blue-600 flex">
       <NavbarBrand>
         <Button
-          className="font-bold text-inherit text-4xl bg-blue-300flex"
+          className="font-bold text-inherit text-4xl bg-blue-400 flex"
           as={Link}
           href="/"
         >
@@ -45,13 +53,13 @@ const CustomNavbar = () => {
           <p className="text-green-500 text-4xl">X</p>
         </Button>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent justify="end">
         <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                className="p-0 text-black bg-transparent data-[hover=true]:bg-transparent"
                 endContent={icons.chevron}
                 radius="sm"
                 variant="light"
@@ -69,63 +77,74 @@ const CustomNavbar = () => {
           >
             <DropdownItem
               key="autoscaling"
-              description="ACME scales apps to meet user demand, automagically, based on load."
-              startContent={icons.scale}
+              className="text-black"
+              description="Parcels are picked up and delivered on same day, often within few hours."
+              startContent={icons.flash}
             >
-              Autoscaling
+              Same-Day Delivery
             </DropdownItem>
             <DropdownItem
               key="usage_metrics"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              className="text-black"
+              description="You can track  your shipment in real-time , ensuring where your package is."
               startContent={icons.activity}
             >
-              Usage Metrics
+              Package Tracking
             </DropdownItem>
             <DropdownItem
+              className="text-black"
               key="production_ready"
-              description="ACME runs on ACME, join us and others serving requests at web scale."
-              startContent={icons.flash}
+              description="Allow you to schedule future deliveries, easy to plan for important shipments."
+              startContent={icons.schedule}
             >
-              Production Ready
+              Delivery Scheduling
             </DropdownItem>
             <DropdownItem
+              className="text-black"
               key="99_uptime"
-              description="Applications stay on the grid with high availability and high uptime guarantees."
-              startContent={icons.server}
+              description="Allows users to send packages to multiple destinations in a single trip"
+              startContent={icons.multi}
             >
-              +99% Uptime
+              Multi-Stop Delivery Options
             </DropdownItem>
             <DropdownItem
+              className="text-black"
+              key="supreme_support"
+              description="Pay for your shipment directly from app through variety of payment methods."
+              startContent={icons.payment}
+            >
+              Payment Options
+            </DropdownItem>
+            <DropdownItem
+              className="text-black"
               key="supreme_support"
               description="Overcome any challenge with a supporting team ready to respond."
-              startContent={icons.user}
+              startContent={icons.customer}
             >
-              +Supreme Support
+              Customer Support
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
+          <Link className="text-black" href="#" aria-current="page">
             About Us
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link className="text-black" color="foreground" href="#">
             Contact Us
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" color="foreground">
+          <Link href="#" className="text-black" color="foreground">
             Feedback
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" color="foreground">
+          <Link href="/Dashboard" className="text-black" color="foreground">
             Track Order
           </Link>
         </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
         <NavbarItem>
           <Button>
             <Link color="primary" href="/Login" variant="flat">

@@ -1,18 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import CustomNavbar from "./Compoment/NavBar/page";
-import { Button, Input } from "@nextui-org/react";
-import LeftSideBar from "./Compoment/SideBar/LeftSideBar/page";
-import RightSideBar from "./Compoment/SideBar/RightSideBar/page";
-import { MdLocationSearching } from "react-icons/md";
-import Link from "next/link";
 
+import { Input } from "@nextui-org/react";
+import CustomNavbar from "@/component/NavBar/page";
 const HomePage = () => {
   return (
     <div className="relative h-screen w-full  bg-blue-100">
-      <div className="bg-blue-300 absolute top-0 left-0 right-0 z-10">
-        <CustomNavbar />
-      </div>
+      <CustomNavbar></CustomNavbar>
 
       <div className="flex h-full items-center justify-between w-screen p-20">
         <div className="text-white text-4xl">

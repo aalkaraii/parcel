@@ -2,11 +2,12 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
-import CustomNavbar from "../Compoment/NavBar/page";
+
 import { Button, Card, Select, SelectItem } from "@nextui-org/react";
 import axios from "axios";
 import { Form, Formik, useFormik } from "formik";
 import Link from "next/link";
+import CustomNavbar from "@/component/NavBar/page";
 
 const SignupForm = () => {
   const formik = useFormik({
