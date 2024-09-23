@@ -5,7 +5,6 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
   DropdownItem,
   DropdownTrigger,
@@ -21,6 +20,7 @@ import {
   FaUserTag,
   FaBalanceScale,
 } from "react-icons/fa"; // Importing icons from react-icons
+import Link from "next/link";
 
 const CustomNavbar = () => {
   const icons = {
@@ -127,13 +127,17 @@ const CustomNavbar = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} color="primary" href="/Login" variant="flat">
-            Login
+          <Button>
+            <Link color="primary" href="/Login" variant="flat">
+              Login
+            </Link>
           </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="/Register" variant="flat">
-            Sign Up
+          <Button>
+            <Link color="primary" href="/Register" variant="flat">
+              Sign Up
+            </Link>
           </Button>
         </NavbarItem>
       </NavbarContent>

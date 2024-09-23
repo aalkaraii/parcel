@@ -6,6 +6,7 @@ import { Formik } from "formik";
 import { Card } from "@nextui-org/react";
 import CustomNavbar from "../Compoment/NavBar/page";
 import SideBar from "../Compoment/SideBar/LeftSideBar/page";
+import Link from "next/link";
 
 const login = () => {
   return (
@@ -65,9 +66,9 @@ const login = () => {
             </div>
             <div className="flex justify-center text-center">
               Need an Account?{" "}
-              <a href="/Register" className="underline text-blue-300 ">
+              <Link href="/Register" className="underline text-blue-300 ">
                 Register
-              </a>
+              </Link>
             </div>
             <a href="" className=" flex justify-center text-center m-3">
               {" "}

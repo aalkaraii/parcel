@@ -6,6 +6,7 @@ import CustomNavbar from "../Compoment/NavBar/page";
 import { Button, Card, Select, SelectItem } from "@nextui-org/react";
 import axios from "axios";
 import { Form, Formik, useFormik } from "formik";
+import Link from "next/link";
 
 const SignupForm = () => {
   const formik = useFormik({
@@ -173,9 +174,9 @@ const SignupForm = () => {
             </div>
             <div className="flex justify-center text-center">
               Already have an account?{" "}
-              <a href="/Login" className="underline text-blue-300 ">
+              <Link href="/Login" className="underline text-blue-300 ">
                 Sign in
-              </a>
+              </Link>
             </div>
           </Form>
         </div>
