@@ -1,14 +1,16 @@
+"use client";
+
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React, { use } from "react";
 
 const AboutUs = () => {
   return (
-    <div className=" text-black ">
-      <div className=" ">
-        <p className="text-xl flex flex-col justify-center text-black items-start">
-          About Us
-        </p>
-        <p>
+    <div className=" text-black flex justify-center bg-blue ">
+      <div className=" mt-10 text-black w-1/2 p-10">
+        <div className="text-4xl mb-4 ">About Us</div>
+        <p className="text-large mt-3">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -19,14 +21,20 @@ const AboutUs = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
+        <Button className="border-2 shadow-md bg-white mt-10 ">
+          <div className="bg-white text-black rounded-md p-2  ">
+            {" "}
+            <Link href="#">Learn More</Link>
+          </div>
+        </Button>
       </div>
-      <div className="flex justify-end items-center p-10">
+      <div className=" w-1/2">
         <Image
-          src="/parcel.jpeg"
+          src="/parcel.jpg"
           width={600}
-          height={400}
+          height={500}
           alt="Home Image"
-          className="rounded-sm"
+          className=" mt-16 p-10 rounded"
         />
       </div>
     </div>

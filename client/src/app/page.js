@@ -7,10 +7,10 @@ import AboutUs from "@/component/AboutUs/page";
 
 const HomePage = () => {
   return (
-    <div className="relative h-screen w-full  bg-blue-100">
+    <div className="relative h-full w-full  bg-gradient-to-r from-blue-300 to-white">
       <CustomNavbar></CustomNavbar>
 
-      <div className="flex h-full items-center justify-between w-screen p-20">
+      <div className="flex h-full items-center justify-between w-screen ml-20 mr-20">
         <div className="text-white text-4xl">
           <div className="mb-8">
             <div className="flex flex-col mt-10 justify-center text-black items-start">
@@ -56,17 +56,22 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="flex justify-end items-center p-10">
+        <div className=" w-1/2">
           <Image
             src="/home.png"
             width={600}
             height={400}
             alt="Home Image"
-            className="rounded-sm"
+            className="rounded-sm mr-16 p-10"
           />
         </div>
       </div>
-      <AboutUs />
+      <div
+        id="about"
+        className="h-full bg-gradient-to-r from-blue-300 to-white"
+      >
+        <AboutUs />
+      </div>
     </div>
   );
 };
