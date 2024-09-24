@@ -4,10 +4,11 @@ import Image from "next/image";
 import { Input } from "@nextui-org/react";
 import CustomNavbar from "@/component/NavBar/page";
 import AboutUs from "@/component/AboutUs/page";
+import ContactUs from "@/component/ContactUs/page";
 
 const HomePage = () => {
   return (
-    <div className="relative h-full w-full  bg-gradient-to-r from-blue-300 to-white">
+    <div className="relative h-full w-full  bg-gradient-to-r from-blue-300 to-white p-3">
       <CustomNavbar></CustomNavbar>
 
       <div className="flex h-full items-center justify-between w-screen ml-20 mr-20">
@@ -71,6 +72,12 @@ const HomePage = () => {
         className="h-full bg-gradient-to-r from-blue-300 to-white"
       >
         <AboutUs />
+      </div>
+      <div
+        id="contact"
+        className="h-full bg-gradient-to-r from-blue-300 to-white"
+      >
+        <ContactUs />
       </div>
     </div>
   );

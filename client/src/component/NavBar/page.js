@@ -136,7 +136,7 @@ const CustomNavbar = () => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-black" color="foreground" href="#">
+          <Link className="text-black" color="foreground" href="/#contact">
             Contact Us
           </Link>
         </NavbarItem>
