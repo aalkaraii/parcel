@@ -141,7 +141,7 @@ const CustomNavbar = () => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" className="text-black" color="foreground">
+          <Link href="/#feedback" className="text-black" color="foreground">
             Feedback
           </Link>
         </NavbarItem>
@@ -151,17 +151,19 @@ const CustomNavbar = () => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Button>
-            <Link color="primary" href="/Login" variant="flat">
-              Login
-            </Link>
+          <Button className="border-2 shadow-md bg-transparent border-black  ">
+            <div className="bg-transparent text-black rounded-md p-2  ">
+              {" "}
+              <Link href="/login">Login</Link>
+            </div>
           </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button>
-            <Link color="primary" href="/Register" variant="flat">
-              Sign Up
-            </Link>
+          <Button className="border-2 shadow-md bg-transparent border-black  ">
+            <div className="bg-transparent text-black rounded-md p-2  ">
+              {" "}
+              <Link href="/Register">Sign Up</Link>
+            </div>
           </Button>
         </NavbarItem>
       </NavbarContent>

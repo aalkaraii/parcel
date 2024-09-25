@@ -1,16 +1,17 @@
 import React from "react";
 import Image from "next/image";
 
-import { Input } from "@nextui-org/react";
+import { Button, Input } from "@nextui-org/react";
 import CustomNavbar from "@/component/NavBar/page";
 import AboutUs from "@/component/AboutUs/page";
 import ContactUs from "@/component/ContactUs/page";
+import FeedBack from "@/component/FeedBack/page";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
     <div className="relative h-full w-full  bg-gradient-to-r from-blue-300 to-white p-3">
       <CustomNavbar></CustomNavbar>
-
       <div className="flex h-full items-center justify-between w-screen ml-20 mr-20">
         <div className="text-white text-4xl">
           <div className="mb-8">
@@ -50,10 +51,14 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-
-            <div className="bg-gray-300 mt-3 text-black text-s rounded-md shadow-lg flex justify-center gap-2 w-fit p-4">
-              <button className="text-xs w-80">See prices</button>
-            </div>
+          </div>
+          <div className="mt-10 ml-9">
+            <Button className="border-2 shadow-md bg-transparent border-white p-4 ">
+              <div className="bg-transparent text-black rounded-md p-2  ">
+                {" "}
+                <Link href="#">See Prices</Link>
+              </div>
+            </Button>
           </div>
         </div>
 
@@ -74,8 +79,15 @@ const HomePage = () => {
         <AboutUs />
       </div>
       <div
+        id="feedback"
+        className="h-full bg-gradient-to-r from-blue-300 to-white mt-10"
+      >
+        <FeedBack />
+      </div>
+      ``
+      <div
         id="contact"
-        className="h-full bg-gradient-to-r from-blue-300 to-white"
+        className="h-full bg-gradient-to-r from-blue-300 to-white mt-10"
       >
         <ContactUs />
       </div>

@@ -7,9 +7,9 @@ import React, { use } from "react";
 
 const AboutUs = () => {
   return (
-    <div className=" text-black flex justify-center bg-blue ">
+    <div className=" text-black flex justify-center">
       <div className=" mt-10 text-black w-1/2 p-10">
-        <div className="text-4xl mb-4 ">About Us</div>
+        <div className="text-4xl mb-4 flex justify-center">About Us</div>
         <p className="text-large mt-3">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -21,8 +21,8 @@ const AboutUs = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-        <Button className="border-2 shadow-md bg-white mt-10 ">
-          <div className="bg-white text-black rounded-md p-2  ">
+        <Button className="border-2 shadow-md bg-transparent  mt-10 ">
+          <div className="bg-transparent text-black rounded-md p-2  ">
             {" "}
             <Link href="#">Learn More</Link>
           </div>
