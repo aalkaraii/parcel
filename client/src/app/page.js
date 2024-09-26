@@ -10,11 +10,11 @@ import Link from "next/link";
 
 const HomePage = () => {
   return (
-    <div className="relative h-full w-full  bg-gradient-to-r from-blue-300 to-white p-3">
+    <div className="relative h-full w-full  bg-gradient-to-r from-blue-300 to-white ">
       <CustomNavbar></CustomNavbar>
-      <div className="flex h-full items-center justify-between w-screen ml-20 mr-20">
-        <div className="text-white text-4xl">
-          <div className="mb-8">
+      <div className="flex h-full items-center justify-between  ">
+        <div className="text-white text-4xl ml-24">
+          <div className="mb-8 ml-10">
             <div className="flex flex-col mt-10 justify-center text-black items-start">
               Send Your Goods with
               <br /> DeliveryX
@@ -64,11 +64,11 @@ const HomePage = () => {
 
         <div className=" w-1/2">
           <Image
-            src="/home.png"
+            src="/parcel.jpg"
             width={600}
-            height={400}
+            height={500}
             alt="Home Image"
-            className="rounded-sm mr-16 p-10"
+            className=" mt-16 p-10 rounded"
           />
         </div>
       </div>

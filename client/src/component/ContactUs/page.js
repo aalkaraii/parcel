@@ -17,7 +17,7 @@ const ContactUs = () => {
     location: <FaLocationDot className="text-gray-700" size={40} />,
   };
   return (
-    <div className="text-black mt-10 p-10">
+    <div className="text-black mt-10 ">
       <div className="flex justify-center text-center text-4xl mb-20 text-black">
         Contact Us
       </div>
