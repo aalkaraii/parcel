@@ -18,12 +18,12 @@ const ContactUs = () => {
   };
   return (
     <div className="text-black mt-10 ">
-      <div className="flex justify-center text-center text-4xl mb-20 text-black">
+      <div className="flex justify-center text-center text-4xl  text-black mt-20">
         Contact Us
       </div>
 
-      <div className=" flex justify-center mt-20">
-        <div className="p-10 border mt-10">
+      <div className=" flex justify-center mt-5 p-10">
+        <div className="p-10 border mt-10 mb-10s">
           {icons.phone}
           BY PHONE
           <br />
@@ -43,7 +43,7 @@ const ContactUs = () => {
           <br /> 1st Block 1st Cross.
         </div>
       </div>
-      <div className="bg-black w-full h-72  flex gap-40 pl-20 p-10">
+      <div className="bg-black w-full h-72  flex gap-40 pl-20 p-10 mt-10 ">
         <div className="flex flex-col gap-2 w-1/3">
           <div className="text-white w-1/3 text-4xl">DeliveryX</div>
           <div className="text-white">

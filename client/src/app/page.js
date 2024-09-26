@@ -74,20 +74,20 @@ const HomePage = () => {
       </div>
       <div
         id="about"
-        className="h-full bg-gradient-to-r from-blue-300 to-white"
+        className="h-full bg-gradient-to-r from-blue-300 to-white mb-10 p-10"
       >
         <AboutUs />
       </div>
       <div
         id="feedback"
-        className="h-full bg-gradient-to-r from-blue-300 to-white mt-10"
+        className="h-full bg-gradient-to-r from-blue-300 to-white mt-20 mb-10 p-10"
       >
         <FeedBack />
       </div>
       ``
       <div
         id="contact"
-        className="h-full bg-gradient-to-r from-blue-300 to-white mt-10"
+        className="h-full bg-gradient-to-r from-blue-300 to-white mt-10  "
       >
         <ContactUs />
       </div>
