@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const HomePage = () => {
   return (
-    <div className="relative h-full w-full  bg-gradient-to-r from-blue-300 to-slate-600 ">
+    <div className="relative h-full w-full  bg-gradient-to-r from-blue-300 to-white ">
       <CustomNavbar></CustomNavbar>
       <div className="flex h-full items-center justify-between  ">
         <div className="text-white text-4xl ml-24">
@@ -74,20 +74,20 @@ const HomePage = () => {
       </div>
       <div
         id="about"
-        className="h-full bg-gradient-to-r from-blue-300 to-slate-600"
+        className="h-full bg-gradient-to-r from-blue-300 to-white mb-10 p-10"
       >
         <AboutUs />
       </div>
       <div
         id="feedback"
-        className="h-full bg-gradient-to-r from-blue-300 to-slate-600"
+        className="h-full bg-gradient-to-r from-blue-300 to-white mt-20 mb-10 p-10"
       >
         <FeedBack />
       </div>
       ``
       <div
         id="contact"
-        className="h-full bg-gradient-to-r from-blue-300 to-slate-600 "
+        className="h-full bg-gradient-to-r from-blue-300 to-white mt-10  "
       >
         <ContactUs />
       </div>
