@@ -23,7 +23,7 @@ const ContactUs = () => {
       </div>
 
       <div className=" flex justify-center mt-5 p-10">
-        <div className="p-10 border mt-10 mb-10s">
+        <div className="p-10 mt-10 mb-10s">
           {icons.phone}
           BY PHONE
           <br />
