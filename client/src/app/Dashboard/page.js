@@ -6,7 +6,7 @@ import React from "react";
 const Dashboard = () => {
   return (
     <div>
-      <div className="bg-blue-300 absolute top-0 left-0 right-0 z-10">
+      <div className="bg-transparent absolute top-0 left-0 right-0 z-10">
         <CustomNavbar />
       </div>
       <div class="flex min-h-screen">
