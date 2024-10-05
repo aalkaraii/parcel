@@ -9,9 +9,11 @@ const page = () => {
     {
       SetNumber(number + 1);
     }
-    const handelDecrement = () => {
-      SetNumber(number - 1);
-    };
+  };
+  const handelDecrement = () => {
+    {
+      SetNumber(number + 1);
+    }
   };
   return (
     <div>

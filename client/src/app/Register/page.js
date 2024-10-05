@@ -36,12 +36,12 @@ const SignupForm = () => {
   return (
     <Formik>
       <Card>
-        <div>
+        <div className="bg-gradient-to-r from-blue-300 to-white relative">
           <CustomNavbar />
         </div>
-        <div className=" bg-gray-400 h-screen flex justify-center items-center">
+        <div className=" bg-gradient-to-r from-blue-300 to-white h-screen flex justify-center items-center">
           <Form
-            className="bg-white p-6  w-1/3 rounded shadow-lg"
+            className="bg-transparent p-6  w-1/3 rounded shadow-lg"
             onSubmit={formik.handleSubmit}
           >
             <div>

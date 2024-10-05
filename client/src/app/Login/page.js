@@ -11,12 +11,12 @@ const login = () => {
   return (
     <div>
       <Card>
-        <div>
+        <div className="bg-gradient-to-r from-blue-300 to-white retative">
           <CustomNavbar />
         </div>
 
-        <div className=" bg-gray-400 h-screen flex justify-center items-center">
-          <form className="bg-white p-6  w-1/3 rounded shadow-lg">
+        <div className=" bg-gradient-to-r from-blue-300 to-white h-screen flex justify-center items-center">
+          <form className="bg-transparent p-6  w-1/3 rounded shadow-lg">
             <div>
               <label>
                 Enter Email Address

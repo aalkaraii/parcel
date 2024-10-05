@@ -11,15 +11,7 @@ import {
   DropdownMenu,
   Button,
 } from "@nextui-org/react";
-import {
-  FaChevronDown,
-  FaLock,
-  FaChartLine,
-  FaBolt,
-  FaServer,
-  FaUserTag,
-  FaBalanceScale,
-} from "react-icons/fa"; // Importing icons from react-icons
+import { FaChevronDown, FaLock, FaBolt, FaBalanceScale } from "react-icons/fa"; // Importing icons from react-icons
 import { FaMapLocationDot } from "react-icons/fa6";
 import { RiCalendarScheduleLine } from "react-icons/ri";
 import { MdMultipleStop } from "react-icons/md";
@@ -154,7 +146,7 @@ const CustomNavbar = () => {
           <Button className="border-2 shadow-md bg-transparent border-black  ">
             <div className="bg-transparent text-black rounded-md p-2  ">
               {" "}
-              <Link href="/login">Login</Link>
+              <Link href="/Login">Login</Link>
             </div>
           </Button>
         </NavbarItem>
