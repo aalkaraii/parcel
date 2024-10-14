@@ -10,12 +10,19 @@ import Link from "next/link";
 
 import React from "react";
 
-const LeftSideBar = () => {
+const ClientSideBar = () => {
   return (
-    <div className="flex ">
-      <div className=" border"></div>
+    <div className="flex text-black">
+      <div className=" border">Home</div>
+      <div>My Parcels</div>
+      <div>Calander</div>
+      <div>Payments</div>
+      <div>Messages</div>
+      <div>Support</div>
+      <Button>Premium account</Button>
+      <Button>Log Out </Button>
     </div>
   );
 };
 
-export default LeftSideBar;
+export default ClientSideBar;

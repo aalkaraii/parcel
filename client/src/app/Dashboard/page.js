@@ -5,6 +5,7 @@ import {
   CardBody,
   CardFooter,
   Chip,
+  Button,
 } from "@nextui-org/react";
 import React from "react";
 
@@ -13,6 +14,28 @@ const Dashboard = () => {
     <div className="flex bg-white">
       <div className="bg-transparent absolute top-0 left-0 right-0 z-10">
         <CustomNavbar />
+      </div>
+      <div className=" text-black bg-red w-[240px] mt-20 p-10">
+        <div>
+          <button className=" flex  w-[240px] p-3">Home</button>
+          <button className=" flex w-[240px] p-3">My Parcels</button>
+          <button className=" flex w-[240px] p-3 ">Calander</button>
+          <button className=" flex w-[240px] p-3">Payments</button>
+          <button className=" flex w-[240px] p-3">Messages</button>
+          <button className=" flex w-[240px] p-3">Support</button>
+          <div className="w-[240px] h-[240px] border-none "></div>
+        </div>
+        <Button className="p-3 m-3">Premium account</Button>
+        <Button className="p-3 m-3">Log Out </Button>
+      </div>
+      <div className="flex w-[240px] mt-20 p-10">
+        <div className="text-3xl">Parcel Status</div>
+        <div className="flex gap-20 ">
+          <button>All</button>
+          <button>Incomming</button>
+          <button>Recived</button>
+          <button>Calceled</button>
+        </div>
       </div>
       <div className="bg-transparent min-w-full mt-20 p-10">
         <Card className="w-[240px] h-[240px] border-none bg-gradient-to-br from-violet-500 to-fuchsia-500">
