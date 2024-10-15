@@ -8,6 +8,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import React from "react";
+import { Avatar } from "@nextui-org/react";
 
 const Dashboard = () => {
   return (
@@ -17,6 +18,15 @@ const Dashboard = () => {
       </div>
       <div className=" text-black bg-red w-[240px] mt-20 p-10">
         <div>
+          <div className="flex gap-4 items-center">
+            <div>
+              <Avatar
+                isBordered
+                color="default"
+                src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
+              />
+            </div>
+          </div>
           <button className=" flex  w-[240px] p-3">Home</button>
           <button className=" flex w-[240px] p-3">My Parcels</button>
           <button className=" flex w-[240px] p-3 ">Calander</button>
