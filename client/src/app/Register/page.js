@@ -2,13 +2,24 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
-
-import { Button, Card, Select, SelectItem } from "@nextui-org/react";
+import * as Yup from "yup";
+import { Button, Card, Input, Select, SelectItem } from "@nextui-org/react";
 import axios from "axios";
-import { Form, Formik, useFormik } from "formik";
+import { useFormik } from "formik";
 import Link from "next/link";
 import CustomNavbar from "@/component/NavBar/page";
-
+const signUpSchema = Yup.object().shape({
+  password: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  phoneNumber: Yup.string().min(10, "at least 10 digits").required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+  cpassword: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+});
 const SignupForm = () => {
   const formik = useFormik({
     initialValues: {
@@ -16,10 +27,12 @@ const SignupForm = () => {
       lastName: "",
       email: "",
       password: "",
+      cpassword: "",
       phoneNumber: "",
       gender: "",
       role: "",
     },
+    validationSchema: signUpSchema,
     onSubmit: (values) => {
       registerUser(values);
     },
@@ -34,13 +47,13 @@ const SignupForm = () => {
   };
 
   return (
-    <Formik>
-      <Card>
+    <form onSubmit={formik.handleSubmit}>
+      <div>
         <div className="bg-gradient-to-r from-blue-300 to-white relative">
           <CustomNavbar />
         </div>
         <div className=" bg-gradient-to-r from-blue-300 to-white h-screen flex justify-center items-center">
-          <Form
+          <div
             className="bg-transparent p-6  w-1/3 rounded shadow-lg"
             onSubmit={formik.handleSubmit}
           >
@@ -48,19 +61,21 @@ const SignupForm = () => {
               <div className="flex space-x-4 mb-4 ">
                 <label className="w-1/2">
                   First name
-                  <input
+                  <Input
+                    isRequired
                     id="firstName"
                     name="firstName"
                     type="text"
                     placeholder="Enter First name"
-                    className=" focus:outline-none border-b border-gray-400 w-full mt-3 text-xs "
+                    className="focus:outline-none border-b border-gray-400 w-full mt-3 text-xs"
                     onChange={formik.handleChange}
                     value={formik.values.firstName}
-                  ></input>
+                  />
                 </label>
+
                 <label className="w-1/2">
                   Last name
-                  <input
+                  <Input
                     id="lastName"
                     name="lastName"
                     type="text"
@@ -68,26 +83,28 @@ const SignupForm = () => {
                     className="border-b border-gray-400 w-full mt-3 text-xs focus:outline-none "
                     onChange={formik.handleChange}
                     value={formik.values.lastName}
-                  ></input>
+                  ></Input>
                 </label>
               </div>
 
               <div className="flex space-x-4 mb-4 ">
                 <label className="w-1/2">
                   Enter Email Address
-                  <input
-                    placeholder="Enter email address"
-                    className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
-                    id="email"
+                  <Input
+                    isRequired
+                    type="email"
                     name="email"
-                    type="text"
+                    id="email"
+                    placeholder="Enter phone number or email"
+                    className="border-b mb-4 focus:outline-none border-gray-400 w-full mt-3 text-xs "
                     onChange={formik.handleChange}
                     value={formik.values.email}
-                  ></input>
+                  />
+                  {formik.errors.email}
                 </label>
                 <label className="w-1/2">
                   Enter PhoneNumber
-                  <input
+                  <Input
                     id="phoneNumber"
                     name="phoneNumber"
                     type="text"
@@ -95,13 +112,15 @@ const SignupForm = () => {
                     className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
                     onChange={formik.handleChange}
                     value={formik.values.phoneNumber}
-                  ></input>
+                  />
+                  {formik.errors.phoneNumber}
                 </label>
               </div>
               <div className=" space-x-4 mb-4 ">
                 <label className="w-1/2">
                   Choose A Password
-                  <input
+                  <Input
+                    isRequired
                     placeholder="Enter Password"
                     type="password"
                     className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
@@ -109,15 +128,22 @@ const SignupForm = () => {
                     name="password"
                     onChange={formik.handleChange}
                     value={formik.values.password}
-                  ></input>
+                  />
+                  {formik.errors.password}
                 </label>
                 <label className="w-1/2">
                   Confirm Password
-                  <input
+                  <Input
+                    isRequired
+                    name="cpassword"
                     placeholder="confirm Password"
+                    id="cpassword"
                     type="password"
                     className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
-                  ></input>
+                    onChange={formik.handleChange}
+                    value={formik.values.cpassword}
+                  />
+                  {formik.errors.cpassword}
                 </label>
                 <label htmlFor="gender">Gender</label>
 
@@ -179,10 +205,10 @@ const SignupForm = () => {
                 Sign in
               </Link>
             </div>
-          </Form>
+          </div>
         </div>
-      </Card>
-    </Formik>
+      </div>
+    </form>
   );
 };
 

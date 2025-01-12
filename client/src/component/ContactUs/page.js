@@ -47,7 +47,7 @@ const ContactUs = () => {
         <div className="flex flex-col gap-2 w-1/3">
           <div className="text-white w-1/3 text-4xl">DeliveryX</div>
           <div className="text-white">
-            <p>About US</p>
+            <button href="/AboutUs">About US</button>
             <p>Location </p>
             <p>Delivery Charges</p>
             <p>Insurance</p>

@@ -1,39 +1,71 @@
+"use client";
 import React from "react";
-
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
-import { Formik } from "formik";
-import { Card } from "@nextui-org/react";
+
+import { Card, Input } from "@nextui-org/react";
 import Link from "next/link";
 import CustomNavbar from "@/component/NavBar/page";
 
+const loginSchema = Yup.object().shape({
+  password: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+});
+
 const login = () => {
+  const formik = useFormik({
+    initialValues: {
+      password: "",
+      email: "",
+    },
+    validationSchema: loginSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
   return (
-    <div>
+    <form onSubmit={formik.handleSubmit}>
       <Card>
         <div className="bg-gradient-to-r from-blue-300 to-white retative">
           <CustomNavbar />
         </div>
 
         <div className=" bg-gradient-to-r from-blue-300 to-white h-screen flex justify-center items-center">
-          <form className="bg-transparent p-6  w-1/3 rounded shadow-lg">
+          <div className="bg-transparent p-6  w-1/3 rounded shadow-lg">
             <div>
               <label>
                 Enter Email Address
-                <input
+                <Input
+                  isRequired
                   type="email"
+                  name="email"
+                  id="email"
                   placeholder="Enter phone number or email"
                   className="border-b mb-4 focus:outline-none border-gray-400 w-full mt-3 text-xs "
-                ></input>
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
+                />
+                {formik.errors.email}
               </label>
 
               <label className="mb-4">
                 Enter Password
-                <input
+                <Input
+                  isRequired
+                  name="password"
+                  id="password"
                   placeholder="Enter Password"
                   type="password"
                   className="border-b focus:outline-none border-gray-400 w-full mt-3 text-xs "
-                ></input>
+                  onChange={formik.handleChange}
+                  value={formik.values.password}
+                />
+                {formik.errors.password}
               </label>
               <button className="bg-blue-300 rounded-md w-full p-2 shadow-lg mt-3">
                 Login
@@ -76,10 +108,10 @@ const login = () => {
             </a>
 
             <br></br>
-          </form>
+          </div>
         </div>
       </Card>
-    </div>
+    </form>
   );
 };
 

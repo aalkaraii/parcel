@@ -80,6 +80,7 @@ const CustomNavbar = () => {
               className="text-black"
               description="You can track  your shipment in real-time , ensuring where your package is."
               startContent={icons.activity}
+              href="/Dashboard"
             >
               Package Tracking
             </DropdownItem>
